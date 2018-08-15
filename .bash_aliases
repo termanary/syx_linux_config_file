@@ -1,11 +1,15 @@
-#the next is what I define myself->me3
+bind -x '"\eh":htop'
 
-HISTSIZE=10000
+HISTSIZE=100000
 
+export EDITOR=/usr/bin/vim
 export PATH="$PATH:/media/MATLAB/Matlab_2018a/bin/"
+export PATH="$PATH:$HOME/Bin/"
 
 #if you want to use chinene as your default language
 #do not change the next 4 line
+
+export LC_CTYPE=zh_CN.UTF-8
 
 ##English
 LANGUAGE=en_US.UTF-8
@@ -23,8 +27,6 @@ LC_ALL=en_US.UTF-8
 #zip but messy code 
 #unzip -O cp936 
 
-export LC_CTYPE=zh_CN.UTF-8
-
 alias cb='cd /home/syx/translate/blender_docs ; ls '
 alias ct='cd /home/syx/translate/blender_docs/locale/zh/LC_MESSAGES ; ls '
 alias cz='cd /home/syx/translate/blender_docs/build/zhhtml ; ls '
@@ -35,7 +37,7 @@ alias l='ls --color=auto '
 alias la='ls -A --color=auto '
 alias lh='ls -lh --color=auto '
 alias c='cd '
-alias c.='cd ../'
+alias c.='cd ../ ; ls'
 alias info='info --vi-keys'
 
 alias df='df -h '
@@ -51,19 +53,12 @@ alias e='emacs -nw'
 alias emacs='emacs --maximized'
 alias s='screen '
 alias gdb='gdb -tui '
-alias le='/usr/share/vim/vim74/macros/less.sh'
-alias scilab='scilab-cli'
-alias or='/home/syx/download/octave/octave-4.4.0/run-octave '
 alias o='octave-cli '
 alias octave='octave-cli --silent'
 alias matlab='matlab -nodesktop -nosplash'
 alias MATLAB='matlab '
-alias transmission='transmission-cli'
-alias blender='/home/syx/opt/blender-2.79b-linux-glibc219-x86_64/blender'
-  alias yun='~/.nutstore/dist/bin/nutstore-pydaemon.py'
+alias yun='~/.nutstore/dist/bin/nutstore-pydaemon.py'
 
-#alias c='google-chrome'
-#alias f='firefox'
-#alias g='gedit'
+alias gui='~/.start_GUI.sh'
 
 #acpi
