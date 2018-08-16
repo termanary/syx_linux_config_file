@@ -1,3 +1,13 @@
+#acpi
+#command:
+#touchpadoff:lubuntu18.04.1
+
+#zip
+#zip many file once
+#zip '*.zip'
+#zip but messy code 
+#unzip -O cp936 
+
 bind -x '"\eh":htop'
 
 HISTSIZE=100000
@@ -12,24 +22,23 @@ export PATH="$PATH:$HOME/Bin/"
 export LC_CTYPE=zh_CN.UTF-8
 
 ##English
-LANGUAGE=en_US.UTF-8
-LANG=en_US.UTF-8
-LC_ALL=en_US.UTF-8
+#LANGUAGE=en_US.UTF-8
+#LANG=en_US.UTF-8
+#LC_ALL=en_US.UTF-8
 
 ##Chinese
 #LANGUAGE=zh_CN.UTF-8
 #LANG=zh_CN.UTF-8
 #LC_ALL=zh_CN.UTF-8
 
-#zip
-#zip many file once
-#zip '*.zip'
-#zip but messy code 
-#unzip -O cp936 
+#it is necessary
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
-alias cb='cd /home/syx/translate/blender_docs ; ls '
-alias ct='cd /home/syx/translate/blender_docs/locale/zh/LC_MESSAGES ; ls '
-alias cz='cd /home/syx/translate/blender_docs/build/zhhtml ; ls '
+alias cb='cd ~/translate/blender_docs ; ls '
+alias ct='cd ~/translate/blender_docs/locale/zh/LC_MESSAGES ; ls '
+alias cz='cd ~/translate/blender_docs/build/zhhtml ; ls '
 alias p='poedit '
 alias build='sphinx-build -b html -D language=zh manual/ build/zhhtml'
 
@@ -57,8 +66,11 @@ alias o='octave-cli '
 alias octave='octave-cli --silent'
 alias matlab='matlab -nodesktop -nosplash'
 alias MATLAB='matlab '
-alias yun='~/.nutstore/dist/bin/nutstore-pydaemon.py'
+#alias yun='~/.nutstore/dist/bin/nutstore-pydaemon.py'
 
 alias gui='~/.start_GUI.sh'
 
-#acpi
+#to control the touch pad on/off
+#alias touchpadon='synclient TouchpadOff=0'
+#alias touchpadoff='synclient TouchpadOff=1'
+
