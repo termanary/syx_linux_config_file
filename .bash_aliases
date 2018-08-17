@@ -23,8 +23,8 @@ export PATH="$PATH:/media/MATLAB/Matlab_2018a/bin/"
 #export LC_CTYPE=zh_CN.UTF-8
 
 ##English
-#LANGUAGE=en_US.UTF-8
-#LANG=en_US.UTF-8
+LANGUAGE=en_US.UTF-8
+LANG=en_US.UTF-8
 #LC_ALL=en_US.UTF-8
 
 ##Chinese
