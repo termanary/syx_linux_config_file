@@ -72,6 +72,8 @@ alias MATLAB='matlab '
 alias gui='~/.start_GUI.sh'
 
 #to control the touch pad on/off
-#alias touchpadon='synclient TouchpadOff=0'
-#alias touchpadoff='synclient TouchpadOff=1'
+#if not works,run
+#sudo apt install xserver-xorg-input-synaptics
+alias touchpadon='synclient TouchpadOff=0'
+alias touchpadoff='synclient TouchpadOff=1'
 
