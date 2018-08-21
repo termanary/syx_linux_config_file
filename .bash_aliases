@@ -1,3 +1,4 @@
+synclient TouchpadOff=1
 #acpi
 #command:
 #touchpadoff:lubuntu18.04.1
@@ -19,18 +20,25 @@ export PATH="$PATH:/media/MATLAB/Matlab_2018a/bin/"
 #if emacs could not input chinese,uncomment the next line
 #export LC_CTYPE=zh_CN.UTF-8
 
+#LANGUAGE=en_US.UTF-8
+#LANG=en_US.UTF-8
+
 if [ $TERM == 'linux' ] || [ $TERM == 'screen.linux' ]
 then
     #English
     LANGUAGE=en_US.UTF-8
     LANG=en_US.UTF-8
-    #LC_ALL=en_US.UTF-8
+#LC_CTYPE=en_US.UTF-8
+#LC_ALL=en_US.UTF-8
 elif [ $TERM == "xterm" ]
 then
     #Chinese
     LANGUAGE=zh_CN.UTF-8
     LANG=zh_CN.UTF-8
-    #LC_ALL=zh_CN.UTF-8
+#LC_CTYPE=zh_CN.UTF-8
+#LC_ALL=zh_CN.UTF-8
+else
+    echo $TERM
 fi
 
 #it is necessary
