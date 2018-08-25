@@ -1,4 +1,3 @@
-synclient TouchpadOff=1
 #acpi
 #command:
 #touchpadoff:lubuntu18.04.1
@@ -37,6 +36,7 @@ then
     LANG=zh_CN.UTF-8
 #LC_CTYPE=zh_CN.UTF-8
 #LC_ALL=zh_CN.UTF-8
+    synclient TouchpadOff=1
 else
     echo $TERM
 fi
@@ -67,7 +67,6 @@ alias rm='rm -v '
 alias cp='cp -ivu '
 alias mv='mv -iv '
 
-alias v='$HOME/.vim/vim.sh' 
 alias e='emacs -nw'
 alias emacs='emacs --maximized'
 alias s='screen '
@@ -85,4 +84,17 @@ alias gui='~/.start_GUI.sh'
 #sudo apt install xserver-xorg-input-synaptics
 alias touchpadon='synclient TouchpadOff=0'
 alias touchpadoff='synclient TouchpadOff=1'
+
+v ()
+{
+    if [ $# -gt 2 ]
+    then
+        vim $*
+    elif [ $# -le 2 ]
+    then
+        vim -O $*
+    else
+        echo 'ERROR'
+    fi
+}
 
