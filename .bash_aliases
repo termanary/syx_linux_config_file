@@ -12,7 +12,7 @@ bind -x '"\eh":htop'
 
 HISTSIZE=100000
 
-export EDITOR=/usr/bin/vim
+export EDITOR=/usr/local/bin/vim
 export PATH="$PATH:/media/MATLAB/Matlab_2018a/bin/"
 #export PATH="$PATH:$HOME/Bin/"
 
@@ -22,6 +22,7 @@ export PATH="$PATH:/media/MATLAB/Matlab_2018a/bin/"
 #LANGUAGE=en_US.UTF-8
 #LANG=en_US.UTF-8
 
+# locales-all : all language support
 if [ $TERM == 'linux' ] || [ $TERM == 'screen.linux' ]
 then
     #English
@@ -72,12 +73,11 @@ alias emacs='emacs --maximized'
 alias s='screen '
 alias gdb='gdb -tui '
 alias o='octave-cli '
-alias octave='octave-cli --silent'
 alias matlab='matlab -nodesktop -nosplash'
 alias MATLAB='matlab '
 #alias yun='~/.nutstore/dist/bin/nutstore-pydaemon.py'
 
-alias gui='~/.start_GUI.sh'
+alias gui='systemctl start lightdm'
 
 #to control the touch pad on/off
 #if not works,run
