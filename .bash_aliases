@@ -1,20 +1,34 @@
 #acpi
 #command:
 #touchpadoff:lubuntu18.04.1
+# gnome-disks
+
+# opengl:
+# libgl1-mesa-dev libglu1-mesa-dev freeglut3-dev glew-utils 
+# libglew-dev libglew2.0 libgl1-mesa-dev libgl1-mesa-dri 
+# libgl1-mesa-glx libxmu-dev libxmu-headers 
+# 
+# compile:
+# g++ -lGL -lGLU -lglut -lGLEW
+# gcc -lGL -lGLU -lglut
+#
+# firefox *.html
 
 #zip
 #zip many file once
 #zip '*.zip'
 #zip but messy code 
 #unzip -O cp936 
+# for i in $(ls -l | grep -E .*\.zip); do unzip -O GBK $i; done
+
+# only do this could gcc compile assemble to 32-bit : gcc -m32
+# sudo apt install gcc-multilib
 
 bind -x '"\eh":htop'
 
-HISTSIZE=100000
-
+export HISTSIZE=100000
 export EDITOR=/usr/local/bin/vim
-export PATH="$PATH:/media/MATLAB/Matlab_2018a/bin/"
-#export PATH="$PATH:$HOME/Bin/"
+export PATH="$PATH:/media/MATLAB/Matlab_2018a/bin:/media/MatheMatica/MatheMatica_11.3.0_LINUX/Executables:/media/Altera_Quartus_2/quartus/bin:/media/Altera_Quartus_2/quartus/linux/"
 
 #if emacs could not input chinese,uncomment the next line
 #export LC_CTYPE=zh_CN.UTF-8
@@ -26,20 +40,20 @@ export PATH="$PATH:/media/MATLAB/Matlab_2018a/bin/"
 if [ $TERM == 'linux' ] || [ $TERM == 'screen.linux' ]
 then
     #English
-    LANGUAGE=en_US.UTF-8
-    LANG=en_US.UTF-8
-#LC_CTYPE=en_US.UTF-8
-#LC_ALL=en_US.UTF-8
-elif [ $TERM == "xterm" ]
+    export LANGUAGE=en_US.UTF-8
+    export LANG=en_US.UTF-8
+    export LC_CTYPE=en_US.UTF-8
+    export LC_ALL=en_US.UTF-8
+elif [ $TERM == "xterm" ] || [ $TERM == 'screen' ]
 then
     #Chinese
-    LANGUAGE=zh_CN.UTF-8
-    LANG=zh_CN.UTF-8
-#LC_CTYPE=zh_CN.UTF-8
-#LC_ALL=zh_CN.UTF-8
+    export LANGUAGE=zh_CN.UTF-8
+    export LANG=zh_CN.UTF-8
+    export LC_CTYPE=zh_CN.UTF-8
+    export LC_ALL=zh_CN.UTF-8
     synclient TouchpadOff=1
 else
-    echo $TERM
+    echo "$TERM :could not be able not set language!"
 fi
 
 #it is necessary
@@ -78,6 +92,8 @@ alias MATLAB='matlab '
 #alias yun='~/.nutstore/dist/bin/nutstore-pydaemon.py'
 
 alias gui='systemctl start lightdm'
+alias endgui="/etc/init.d/lightdm stop"
+
 
 #to control the touch pad on/off
 #if not works,run
@@ -97,4 +113,21 @@ v ()
         echo 'ERROR'
     fi
 }
+
+# opencv-python 
+# PyOpenGL
+# PyQt5
+
+# Altera Quartus environment variables
+# download libpng12 or add :/opt/kingsoft/wps-office/office6/
+# QUARTUS_64BIT=1
+# MWOS=linux
+# MWARCH=i86
+# QUARTUS_MWWM=allwm
+# export QUARTUS_ROOTDIR=/media/Altera_Quartus_2/quartus
+# export QUARTUS_ROOTDIR_OVERIDE=/media/Altera_Quartus_2/quartus
+# export PATH=$PATH:/media/Altera_Quartus_2/quartus/bin:/media/Altera_Quartus_2/quartus/linux/
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib/:/usr/lib:/media/Altera_Quartus_2/quartus/linux/
+# unset GCC_EXEC_PREFIX 
+
 
