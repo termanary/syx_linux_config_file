@@ -25,10 +25,17 @@
 # sudo apt install gcc-multilib
 
 bind -x '"\eh":htop'
+bind -x '"\ev":vim'
+bind -x '"\eg":gtkwave *.vcd'
 
 export HISTSIZE=100000
 export EDITOR=/usr/local/bin/vim
-export PATH="$PATH:/media/MATLAB/Matlab_2018a/bin:/media/MatheMatica/MatheMatica_11.3.0_LINUX/Executables:/media/Altera_Quartus_2/quartus/bin:/media/Altera_Quartus_2/quartus/linux/"
+export PATH="$PATH:\
+/media/MATLAB/Matlab_R2018a/bin:\
+/media/MatheMatica/MatheMatica_11_3_0/Executables:\
+/media/Altera_Quartus_2/Altera_Quartus_18_1/quartus/bin:\
+/media/Altera_Quartus_2/Altera_Quartus_18_1/quartus/linux64:
+"
 
 #if emacs could not input chinese,uncomment the next line
 #export LC_CTYPE=zh_CN.UTF-8
@@ -74,6 +81,8 @@ alias c='cd '
 alias c.='cd ../ ; ls'
 alias info='info --vi-keys'
 
+alias cv='cd /media/Program/verilog/first/'
+
 alias df='df -h '
 alias du='du -h '
 alias free='free -h '
@@ -94,6 +103,7 @@ alias MATLAB='matlab '
 alias gui='systemctl start lightdm'
 alias endgui="/etc/init.d/lightdm stop"
 
+alias g="gtkwave "
 
 #to control the touch pad on/off
 #if not works,run
@@ -114,9 +124,7 @@ v ()
     fi
 }
 
-# opencv-python 
-# PyOpenGL
-# PyQt5
+alias pondsl='sudo pon dsl-provider '
 
 # Altera Quartus environment variables
 # download libpng12 or add :/opt/kingsoft/wps-office/office6/
@@ -127,7 +135,16 @@ v ()
 # export QUARTUS_ROOTDIR=/media/Altera_Quartus_2/quartus
 # export QUARTUS_ROOTDIR_OVERIDE=/media/Altera_Quartus_2/quartus
 # export PATH=$PATH:/media/Altera_Quartus_2/quartus/bin:/media/Altera_Quartus_2/quartus/linux/
-# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib/:/usr/lib:/media/Altera_Quartus_2/quartus/linux/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib/:/usr/lib:/media/Altera_Quartus_2/quartus/linux/
+export LM_LICENSE_FILE=/home/syx/Desktop/LICENSE.TXT
 # unset GCC_EXEC_PREFIX 
+
+# youtube-dl : debian package -> download from youtube 
+# you-get lulu : python3 package -> download from bilibili
+# video player : mpv 
+
+# openshot pitivi
+
+alias yosys="yosys -s ~/shared.ys "
 
 
