@@ -80,7 +80,7 @@ alias o='octave-cli '
 alias matlab='matlab -nodesktop -nosplash'
 alias MATLAB='matlab '
 
-alias gui='systemctl start lightdm'
+alias gui='sudo systemctl start lightdm'
 alias endgui="/etc/init.d/lightdm stop"
 
 alias g="gtkwave "
