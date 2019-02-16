@@ -1,18 +1,7 @@
-#acpi
-#command:
 #touchpadoff:lubuntu18.04.1
-# gnome-disks
 
-# opengl:
-# libgl1-mesa-dev libglu1-mesa-dev freeglut3-dev glew-utils 
-# libglew-dev libglew2.0 libgl1-mesa-dev libgl1-mesa-dri 
-# libgl1-mesa-glx libxmu-dev libxmu-headers 
-# 
-# compile:
-# g++ -lGL -lGLU -lglut -lGLEW
-# gcc -lGL -lGLU -lglut
-#
-# firefox *.html
+# the *.deb download :
+# /var/cache/apt/archives
 
 #zip
 #zip many file once
@@ -21,27 +10,18 @@
 #unzip -O cp936 
 # for i in $(ls -l | grep -E .*\.zip); do unzip -O GBK $i; done
 
-# only do this could gcc compile assemble to 32-bit : gcc -m32
-# sudo apt install gcc-multilib
-
 bind -x '"\eh":htop'
 bind -x '"\ev":vim'
-bind -x '"\eg":gtkwave *.vcd'
+bind -x '"\eg":gtkwave *.vcd &'
 
 export HISTSIZE=100000
 export EDITOR=/usr/local/bin/vim
 export PATH="$PATH:\
+/opt/firefox:\
 /media/MATLAB/Matlab_R2018a/bin:\
-/media/MatheMatica/MatheMatica_11_3_0/Executables:\
 /media/Altera_Quartus_2/Altera_Quartus_18_1/quartus/bin:\
 /media/Altera_Quartus_2/Altera_Quartus_18_1/quartus/linux64:
 "
-
-#if emacs could not input chinese,uncomment the next line
-#export LC_CTYPE=zh_CN.UTF-8
-
-#LANGUAGE=en_US.UTF-8
-#LANG=en_US.UTF-8
 
 # locales-all : all language support
 if [ $TERM == 'linux' ] || [ $TERM == 'screen.linux' ]
@@ -53,12 +33,13 @@ then
     export LC_ALL=en_US.UTF-8
 elif [ $TERM == "xterm" ] || [ $TERM == 'screen' ]
 then
-    #Chinese
+    # Chinese
     export LANGUAGE=zh_CN.UTF-8
     export LANG=zh_CN.UTF-8
     export LC_CTYPE=zh_CN.UTF-8
     export LC_ALL=zh_CN.UTF-8
-    synclient TouchpadOff=1
+    # useless on mate :
+    # synclient TouchpadOff=1
 else
     echo "$TERM :could not be able not set language!"
 fi
@@ -98,14 +79,13 @@ alias gdb='gdb -tui '
 alias o='octave-cli '
 alias matlab='matlab -nodesktop -nosplash'
 alias MATLAB='matlab '
-#alias yun='~/.nutstore/dist/bin/nutstore-pydaemon.py'
 
 alias gui='systemctl start lightdm'
 alias endgui="/etc/init.d/lightdm stop"
 
 alias g="gtkwave "
 
-#to control the touch pad on/off
+#to control the touch pad on/off only on lxde , not mate
 #if not works,run
 #sudo apt install xserver-xorg-input-synaptics
 alias touchpadon='synclient TouchpadOff=0'
@@ -141,10 +121,14 @@ export LM_LICENSE_FILE=/home/syx/Desktop/LICENSE.TXT
 
 # youtube-dl : debian package -> download from youtube 
 # you-get lulu : python3 package -> download from bilibili
-# video player : mpv 
-
-# openshot pitivi
 
 alias yosys="yosys -s ~/shared.ys "
 
+
+# sudo dpkg --add-architecture i386
+# sudo apt update
+# sudo apt install wine32
+
+# sudo apt autoremove *:i386
+# sudo dpkg --remove-architecture i386
 
