@@ -3,46 +3,60 @@
 # the *.deb download :
 # /var/cache/apt/archives
 
+# only could use in ubuntu, not debian :
 #zip
-#zip many file once
-#zip '*.zip'
+# zip -r
+#zip *.zip *
 #zip but messy code 
 #unzip -O cp936 
 # for i in $(ls -l | grep -E .*\.zip); do unzip -O GBK $i; done
+# next line could be used in debian
+# unar filename
 
+# 7zip : *.7z
+# sudo apt install p7zip
+# 7z x filename
+
+# sudo apt install -f
+
+# bind -x '"":mate-screenshot -a'
 bind -x '"\eh":htop'
 bind -x '"\ev":vim'
-bind -x '"\eg":gtkwave *.vcd &'
+# bind -x '"\eg":gtkwave -S main.tcl *.vcd &'
+bind -x '"\eg":gtkwave *.vcd '
 
 export HISTSIZE=100000
 export EDITOR=/usr/local/bin/vim
-export PATH="$PATH:\
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH="\
+$PATH:\
 /opt/firefox:\
-/media/MATLAB/Matlab_R2018a/bin:\
-/media/Altera_Quartus_2/Altera_Quartus_18_1/quartus/bin:\
-/media/Altera_Quartus_2/Altera_Quartus_18_1/quartus/linux64:
+/opt/Matlab_R2018a/Matlab_R2018a/bin:\
+/opt/Altera_Quartus_18.01/quartus/bin:\
+/opt/Altera_Quartus_18.01/modelsim_ase/bin:\
+/opt/Xilinx_Vivado_18.03/Vivado/2018.3/bin:\
 "
 
 # locales-all : all language support
-if [ $TERM == 'linux' ] || [ $TERM == 'screen.linux' ]
-then
-    #English
-    export LANGUAGE=en_US.UTF-8
-    export LANG=en_US.UTF-8
-    export LC_CTYPE=en_US.UTF-8
-    export LC_ALL=en_US.UTF-8
-elif [ $TERM == "xterm" ] || [ $TERM == 'screen' ]
-then
-    # Chinese
-    export LANGUAGE=zh_CN.UTF-8
-    export LANG=zh_CN.UTF-8
-    export LC_CTYPE=zh_CN.UTF-8
-    export LC_ALL=zh_CN.UTF-8
-    # useless on mate :
-    # synclient TouchpadOff=1
-else
-    echo "$TERM :could not be able not set language!"
-fi
+# if [ $TERM == 'linux' ] || [ $TERM == 'screen.linux' ]
+# then
+#     #English
+#     export LANGUAGE=en_US.UTF-8
+#     export LANG=en_US.UTF-8
+#     export LC_CTYPE=en_US.UTF-8
+#     export LC_ALL=en_US.UTF-8
+# elif [ $TERM == "xterm" ] || [ $TERM == 'screen' ]
+# then
+#     # Chinese
+#     export LANGUAGE=zh_CN.UTF-8
+#     export LANG=zh_CN.UTF-8
+#     export LC_CTYPE=zh_CN.UTF-8
+#     export LC_ALL=zh_CN.UTF-8
+#     # useless on mate :
+#     # synclient TouchpadOff=1
+# else
+#     echo "$TERM :could not be able not set language!"
+# fi
 
 #it is necessary
 alias grep='grep --color=auto'
@@ -63,6 +77,7 @@ alias c.='cd ../ ; ls'
 alias info='info --vi-keys'
 
 alias cv='cd /media/Program/verilog/first/'
+alias cw='cd .local/share/wesnoth/1.14/data/add-ons/'
 
 alias df='df -h '
 alias du='du -h '
@@ -72,6 +87,7 @@ alias rm='rm -v '
 alias cp='cp -ivu '
 alias mv='mv -iv '
 
+# only emacs startup from terminal could it input Chinese
 alias e='emacs -nw'
 alias emacs='emacs --maximized'
 alias s='screen '
@@ -79,9 +95,12 @@ alias gdb='gdb -tui '
 alias o='octave-cli '
 alias matlab='matlab -nodesktop -nosplash'
 alias MATLAB='matlab '
+# java -jar Mars4_4.jar
+
+alias pondsl='sudo pon dsl-provider '
 
 alias gui='sudo systemctl start lightdm'
-alias endgui="/etc/init.d/lightdm stop"
+alias endgui="sudo /etc/init.d/lightdm stop"
 
 alias g="gtkwave "
 
@@ -90,6 +109,24 @@ alias g="gtkwave "
 #sudo apt install xserver-xorg-input-synaptics
 alias touchpadon='synclient TouchpadOff=0'
 alias touchpadoff='synclient TouchpadOff=1'
+
+alias mars='~/download/mips/Mars4_4.jar'
+alias modelsim='vsim'
+alias civ="cd /opt/Civ5/Sid_Meiers_Civilization_V/ ; ./Civ5XP"
+# alias steam="~/.local/share/Steam/steam.sh "
+alias ma="pluma ~/.main.c"
+
+alias yosys="yosys -s ~/shared.ys "
+alias hj='firefox /home/syx/download/java_jdk_11/docs/index.html'
+alias mpv="mpv -no-border "
+alias mplayer="mplayer -lavdopts threads=4 -vo fbdev2 -zoom -x 1365 -y 768 "
+
+alias dos="sed -i 's/\r*$/\r/' "
+alias unix="sed -i 's/\r*$//' "
+
+alias watch='watch -t -n 1 '
+
+alias tmn='sudo poff ; nmtui'
 
 v ()
 {
@@ -103,8 +140,6 @@ v ()
         echo 'ERROR'
     fi
 }
-
-alias pondsl='sudo pon dsl-provider '
 
 # Altera Quartus environment variables
 # download libpng12 or add :/opt/kingsoft/wps-office/office6/
@@ -122,13 +157,12 @@ export LM_LICENSE_FILE=/home/syx/Desktop/LICENSE.TXT
 # youtube-dl : debian package -> download from youtube 
 # you-get lulu : python3 package -> download from bilibili
 
-alias yosys="yosys -s ~/shared.ys "
-
-
 # sudo dpkg --add-architecture i386
 # sudo apt update
 # sudo apt install wine32
 
 # sudo apt autoremove *:i386
 # sudo dpkg --remove-architecture i386
+
+# apt --fix-broken install
 
