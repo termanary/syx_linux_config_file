@@ -19,6 +19,8 @@
 
 # sudo apt install -f
 
+# PS1='\l'
+
 # bind -x '"":mate-screenshot -a'
 bind -x '"\eh":htop'
 bind -x '"\ev":vim'
@@ -27,14 +29,18 @@ bind -x '"\eg":gtkwave *.vcd '
 
 export HISTSIZE=100000
 export EDITOR=/usr/local/bin/vim
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export JAVA_HOME=/opt/jdk-12.0.2/
 export PATH="\
+/opt/jdk-12.0.2/bin:\
 $PATH:\
 /opt/firefox:\
 /opt/Matlab_R2018a/Matlab_R2018a/bin:\
 /opt/Altera_Quartus_18.01/quartus/bin:\
 /opt/Altera_Quartus_18.01/modelsim_ase/bin:\
 /opt/Xilinx_Vivado_18.03/Vivado/2018.3/bin:\
+/home/syx/download/node/node-v14.2.0-linux-x64/bin:\
+/opt/android-studio/bin:\
+/opt/android-sdk:\
 "
 
 # locales-all : all language support
@@ -76,9 +82,6 @@ alias c='cd '
 alias c.='cd ../ ; ls'
 alias info='info --vi-keys'
 
-alias cv='cd /media/Program/verilog/first/'
-alias cw='cd .local/share/wesnoth/1.14/data/add-ons/'
-
 alias df='df -h '
 alias du='du -h '
 alias free='free -h '
@@ -112,9 +115,6 @@ alias touchpadoff='synclient TouchpadOff=1'
 
 alias mars='~/download/mips/Mars4_4.jar'
 alias modelsim='vsim'
-alias civ="cd /opt/Civ5/Sid_Meiers_Civilization_V/ ; ./Civ5XP"
-# alias steam="~/.local/share/Steam/steam.sh "
-alias ma="pluma ~/.main.c"
 
 alias yosys="yosys -s ~/shared.ys "
 alias hj='firefox /home/syx/download/java_jdk_11/docs/index.html'
@@ -166,3 +166,24 @@ export LM_LICENSE_FILE=/home/syx/Desktop/LICENSE.TXT
 
 # apt --fix-broken install
 
+# create wifi for mobile:success
+# nmcli device wifi hotspot ifname wlp2s0 con-name E402NA ssid ssid_E402NA password dgtg07270936
+# nmcli connection modify E402NA connection.autoconnect yes
+# startup wifi :
+# nmcli device connect wlp2s0
+# abort wifi :
+# nmcli device disconnect wlp2s0
+# connect a wifi:after disconnect
+# nmcli device wifi connect NWPU-WLAN 
+# nmcli device wifi rescan
+
+alias disconnect="nmcli device disconnect wlp2s0"
+alias NWPU_WLAN="nmcli device wifi connect NWPU-WLAN"
+alias NWPU_FREE="nmcli device wifi connect NWPU-FREE"
+alias nova4="nmcli device wifi connect nova4 password 7802312393fd"
+
+# iconv -f gbk -t utf8
+# 10.93.0.191
+# cp /media/OS/Users/石远星/AppData/Roaming/runic\ games/torchlight/save/* ~/.runicgames/Torchlight/Save/
+
+alias db='mysql -h139.9.119.34 -us2017302412 -pGaussDB@123 _2017302412_'
